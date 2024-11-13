@@ -31,6 +31,10 @@ public class Question {
 		return this.answer;
 	}
 	
+	public String getPrompt() {
+		return this.prompt;
+	}
+	
 	public static void main(String[] args) {
 		Question q = new Question("What number studio is this?", "8", 2);
 		q.displayPrompt();

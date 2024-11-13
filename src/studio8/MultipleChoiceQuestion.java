@@ -1,31 +1,28 @@
 package studio8;
 
 public class MultipleChoiceQuestion extends Question {
-	
+
+	private String[] theChoices;
+	private int theChoicesLength;
+
+
 	public MultipleChoiceQuestion(String prompt, String answer, int points, String[] choices) {
-		//FIXME
-		
-		//Call the super class constructor, then create and set
-		//instance variables for any values that aren't handled
-		//by the base class
+		super(prompt, answer, points);
+		this.theChoices = choices;
 	}
-	
+
+
 	public void displayPrompt() {
-		//FIXME
-		
-		/*
-		 * Use the method from the base class to display the prompt,
-		 * Then write more code to display all of the choices like so:
-		 * 
-		 * 1. Choice1
-		 * 2. Choice2
-		 * 3. Choice3
-		 * ...
-		 * N. ChoiceN
-		 */
-		//
+		System.out.println(getPrompt() + "(" + getPoints() + " points)");
+		for (int i = 0; i<theChoices.length; i++) {
+			System.out.println(i + 1 + ": " + theChoices[i]);
+		}
 	}
 	
+	public int getTheChoicesLength() {
+		return this.theChoicesLength;
+	}
+
 	public static void main(String[] args) {
 		String[] choices = {"seven", "nine", "eight", "six"};
 		Question multipleChoice = new MultipleChoiceQuestion("What studio is this?", "3", 1, choices);
